@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html')); // Adjust path if needed
 });
 
-app.post('/pokemon', (req, res) => {
+    app.post('/pokemon', (req, res) => {
     const { name } = req.body;
     console.log("Pokemon name submitted:", name);
     res.send(`Form submitted successfully! You entered: ${name}`);
