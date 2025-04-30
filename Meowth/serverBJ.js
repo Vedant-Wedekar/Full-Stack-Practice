@@ -9,8 +9,12 @@ const app = express();
 const PORT = 5000;
 const SECRET_KEY = 'vedantsecret123'; // You can change this later
 
+
+
 app.use(cors());
 app.use(express.json());
+
+
 
 // MongoDB connection
 mongoose.connect('mongodb://127.0.0.1:27017/meowth-auth', {
@@ -19,12 +23,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/meowth-auth', {
 }).then(() => console.log('✅ MongoDB connected'))
   .catch((err) => console.log('MongoDB error:', err));
 
+
+
 // User Schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
 });
+
+
 
 const User = mongoose.model('User', userSchema);
 

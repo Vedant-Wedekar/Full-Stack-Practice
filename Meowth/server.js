@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -12,7 +14,6 @@ mongoose.connect('mongodb+srv://test123:test123@vedant.6hybv.mongodb.net/?retryW
 .then(() => console.log("Database connected"))
 .catch(err => console.log(err));
 
-// Schema & Model
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
